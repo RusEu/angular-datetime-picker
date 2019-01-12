@@ -1,0 +1,103 @@
+.scheduler {
+  background-color: #FFF;
+  box-shadow: 1px 1px 1px #333;
+  width: 60%;
+  padding: 20px;
+  margin: 20px auto;
+  .header {
+    display: flex;
+    align-items: center;
+    margin-left: 2.5%;
+    .actions {
+      display: inline-block;
+      i {
+        display: inline-block;
+        font-size: 50px;
+        height: 55px;
+        width: 55px;
+        border: 1px solid #EEE;
+        color: #25c5df;
+        line-height: 55px;
+        text-align: center;
+        box-shadow: 2px 2px 2px #888;
+        cursor: pointer;
+        &:hover {
+          background-color: #25c5df;
+          color: #FFF;
+        }
+      }
+    }
+    .title {
+      font-size: 25px;
+      margin-left: 10%;
+      font-family: cursive;
+    }
+  }
+  .body {
+    .days {
+      display: flex;
+      .day {
+        margin: 20px auto;
+        font-size: 20px;
+        font-weight: bold;
+        width: 14.28%;
+        text-align: center;
+        &:before {
+          content: '';
+          height: 5px;
+          margin: 20px auto;
+          background-color: lightskyblue;
+          width: 80%;
+          display: block;
+        }
+      }
+    }
+    .hours {
+      display: flex;
+      max-height: 250px;
+      &.scrollbar {
+        width: auto;
+        overflow-y: auto;
+        margin-bottom: 25px;
+        &::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+          box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+          border-radius: 10px;
+          background-color: #F5F5F5;
+        }
+        &::-webkit-scrollbar {
+          width: 6px;
+          background-color: #F5F5F5;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+          box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+          background-color: #555;
+        }
+      }
+      .day-hours {
+        margin: 10px auto;
+        font-size: 20px;
+        font-weight: bold;
+        width: 14.28%;
+        text-align: center;
+        &:last-child {
+          margin-right: 5px;
+        }
+        .hour {
+          cursor: pointer;
+          &.active {
+            background-color: lightskyblue;
+            border-radius: 5px;
+            color: #FFF;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
