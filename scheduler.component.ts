@@ -22,19 +22,11 @@ export class SchedulerComponent implements OnInit {
     return this._date.clone().endOf('week');
   }
 
-  get title() {
-    const startDate = `${this.startDate.format('MMMM D')}, ${this.startDate.format('YYYY')}`;
-    const endDate = `${this.endDate.format('MMMM D')}, ${this.endDate.format('YYYY')}`;
-    return `${startDate} - ${endDate}`;
-  }
-
   get weekDays() {
     return Array.from(Array(6))
                 .map((_, i) => i + 1)
                 .map((i) => this.startDate.clone().add(i, 'days'));
   }
-
-  public currDate = moment().clone();
 
   private _date = moment();
   private _selectedHours: Moment[] = [];

@@ -4,19 +4,22 @@
       <i (click)="prevWeek()" class="pi pi-angle-left"></i>
       <i (click)="nextWeek()" class="pi pi-angle-right"></i>
     </div>
-    <div class="title">{{ title }}</div>
+    <div class="title">
+      <span> {{ startDate | formatMoment: 'MMMM D'}}, {{ startDate | formatMoment: 'YYYY'}} </span>
+      <span> {{ endDate | formatMoment: 'MMMM D'}}, {{ endDate | formatMoment: 'YYYY'}} </span>
+    </div>
   </div>
   <div class="body">
     <div class="days">
       <div class="day" *ngFor="let day of weekDays">
-        <div class="day-name">{{ day.format('MMM')}}</div>
-        <div class="day-date">{{ day.format('D') }}</div>
+        <div class="day-name">{{ day | formatMoment: 'MMM' }}</div>
+        <div class="day-date">{{ day | formatMoment: 'D' }}</div>
       </div>
     </div>
     <div class="hours scrollbar">
       <div class="day-hours" *ngFor="let day of weekDays">
         <p class="hour" *ngFor="let hour of getHours(day)" (click)="onClick(hour)" [class.active]="isSelected(hour)">
-          {{hour.format('HH:mm')}}
+          {{ hour | formatMoment: 'HH:mm' }}
         </p>
       </div>
   </div>

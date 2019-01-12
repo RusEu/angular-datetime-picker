@@ -31,6 +31,14 @@
       font-size: 25px;
       margin-left: 10%;
       font-family: cursive;
+      span {
+        &:first-child {
+          &:after {
+            content: '-';
+            margin: 0 5px;
+          }
+        }
+      }
     }
   }
   .body {
